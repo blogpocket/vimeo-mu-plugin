@@ -5,7 +5,7 @@ Descripción:
 -------------
 Este mu-plugin (Must-Use Plugin) para WordPress busca en el contenido de publicaciones (posts) y páginas todas las URLs de Vimeo que cumplan con alguno de los siguientes formatos:
  - URLs tradicionales con ID numérico: https://vimeo.com/123456789
- - URLs personalizadas que incluyan un segmento configurable (por ejemplo): https://vimeo.com/<segmento>/alguna-cosa
+ - URLs personalizadas que incluyan un segmento configurable (por ejemplo): https://vimeo.com/{segmento}/alguna-cosa
 
 El plugin permite definir el valor de <segmento> directamente en el código (constante VIMEO_CUSTOM_SEGMENT) para capturar URLs de Vimeo que utilicen una estructura personalizada. Genera un array de resultados sin duplicados por post, ordena las URLs alfabéticamente y muestra la lista mediante un shortcode en forma de tabla con las siguientes columnas:
  1. Contador: Numeración creciente de cada URL encontrada.
