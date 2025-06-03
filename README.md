@@ -13,6 +13,10 @@ El plugin permite definir el valor de <segmento> directamente en el código (con
  3. Título del Post: Título de la publicación o página donde aparece la URL.
  4. URL del Post: Enlace permanente (permalink) a la publicación o página.
 
+Recomendación:
+--------------
+Se recomienda probar este plugin en un entorno de pruebas, antes de pasarlo a un entorno real o de producción. Aunque el código proporcionado se ha testeado exhaustivamente, el autor no se hace responsable de errores o fallos que el plugin pueda tener.
+
 Instrucciones de instalación:
 -----------------------------
 1. Copia este archivo ZIP (vimeo_mu_plugin_v1.3.zip) en tu equipo local.
