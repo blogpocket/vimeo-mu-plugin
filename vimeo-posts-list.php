@@ -32,7 +32,7 @@ function get_vimeo_posts_array() {
             // Utilizamos preg_match_all con una expresión regular que capture ambas variantes:
             // - URLs con solo números: https://vimeo.com/123456789
             // - URLs con "blogpocket": https://vimeo.com/$segment/alguna-cosa
-            if (preg_match_all('/https:\/\/vimeo\.com\/(?:[0-9]+|blogpocket\/[^\s"\'<>]+)/', $post->post_content, $matches)) {
+            if (preg_match_all('/https:\/\/vimeo\.com\/(?:[0-9]+|$segment\/[^\s"\'<>]+)/', $post->post_content, $matches)) {
                 // Filtramos duplicados en el mismo post
                 $unique_vimeo_urls = array_unique($matches[0]);
                 foreach ($unique_vimeo_urls as $vimeo_url) {
