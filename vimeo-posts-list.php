@@ -3,7 +3,7 @@
  * Plugin Name: Mu-Plugin - Lista de URLs de Vimeo con Contador
  * Description: Mu-plugin para listar todas las URLs de Vimeo presentes en posts y páginas, mostrando un contador, URL de Vimeo, Título y URL del Post, sin duplicados por post.
  * Version: 1.3
- * Author: A.Cambronero (Blogpocket.com)
+ * Author: A. Cambronero (Blogpocket.com)
  */
 // Define el segmento personalizado de Vimeo que se utilizará para URLs del tipo https://vimeo.com/<segmento>/...
 // Por defecto: 'blogpocket'. Cambia este valor según tu configuración.
@@ -32,7 +32,10 @@ function get_vimeo_posts_array() {
             // Utilizamos preg_match_all con una expresión regular que capture ambas variantes:
             // - URLs con solo números: https://vimeo.com/123456789
             // - URLs con "blogpocket": https://vimeo.com/$segment/alguna-cosa
-            if (preg_match_all('/https:\/\/vimeo\.com\/(?:[0-9]+|$segment\/[^\s"\'<>]+)/', $post->post_content, $matches)) {
+            
+            $match = preg_quote($segment, '/');
+            $pattern = "/https:\/\/vimeo\.com\/(?:[0-9]+|{$match}\/[^\s\"'<>]+)/";
+            if (preg_match_all($pattern, $post->post_content, $matches)) {
                 // Filtramos duplicados en el mismo post
                 $unique_vimeo_urls = array_unique($matches[0]);
                 foreach ($unique_vimeo_urls as $vimeo_url) {
